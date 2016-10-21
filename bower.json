@@ -1,0 +1,20 @@
+{
+  "name": "angular-meal-tracker",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Kyle Fisher"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/fisherkyle/angular-meal-tracker",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
