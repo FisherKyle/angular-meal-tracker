@@ -1,4 +1,4 @@
-export class Meal {
+export class Food {
 
   // public highCalorieItem: boolean = false;
 
