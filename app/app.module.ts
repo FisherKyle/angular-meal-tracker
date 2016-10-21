@@ -3,6 +3,7 @@ import { BrowserModule }            from '@angular/platform-browser';
 import { FormsModule }              from '@angular/forms';
 import { AppComponent }             from './app.component';
 import { DisplayFoodComponent }     from './display-food.component';
+import { CaloricRangePipe }         from './caloric-range.pipe';
 
 //============================//
 
@@ -19,7 +20,8 @@ import { DisplayFoodComponent }     from './display-food.component';
 
   [
     AppComponent,
-    DisplayFoodComponent
+    DisplayFoodComponent,
+    CaloricRangePipe
   ],
 
   bootstrap: [AppComponent]

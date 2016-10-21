@@ -14,13 +14,19 @@ var food_model_1 = require('./food.model');
 var AppComponent = (function () {
     function AppComponent() {
         this.masterFoodList = [
-            new food_model_1.Food("Diner with Deb", "2 hashbrowns, disco-fries, chocolate milkshake", 1000)
+            new food_model_1.Food("Diner with Deb", "2 hashbrowns, disco-fries, chocolate milkshake", 1000),
+            new food_model_1.Food("monday's netflix snackathon", "pizza rolls, 3 bags of doritos, chocolate milkshake", 2000)
         ];
+        this.selectedCaloricRange = null;
     }
+    AppComponent.prototype.showCaloricRange = function (clickedCaloricRange) {
+        this.selectedCaloricRange = clickedCaloricRange;
+        console.log(clickedCaloricRange);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n\n    <div class=\"container\">\n      <h2>Meal Tracker</h2>\n\n      <display-food [childFoodList] = \"masterFoodList\">\n      </display-food>\n\n    </div>\n  "
+            template: "\n\n    <div class=\"container\">\n      <h2>Meal Tracker</h2>\n\n      <display-food [childFoodList] = \"masterFoodList\" (foodDisplayEmitter) = \"showCaloricRange($event)\">\n      </display-food>\n\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
