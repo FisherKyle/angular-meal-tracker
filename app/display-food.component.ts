@@ -10,6 +10,19 @@ import { Food } from './food.model';
   selector: 'display-food',
 
   template: `
+  
+  <form id="entrySubmit">
+  <label for="entry"> Entry: </label>
+  <input (change)="formInputEntry($event.target.value)" type="text" class= "form-group" id= "form-input-entry" name="entry" required>
+  <button class= "btn btn-default" type="submit">entry!</button>
+  </form>
+
+  <form id="infoSubmit">
+  <label for="info"> Description: </label>
+  <input (change)="formInputInfo($event.target.value)" type="text" class= "form-group" id= "form-input-info" name="info" required>
+  <button class= "btn btn-default" type="submit">description!</button>
+  </form>
+
 
   <select (change)="filterByCaloricRange($event.target.value)">
     <option value="-"> - </option>
