@@ -9,8 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var meal_model_1 = require('./meal.model');
 var AppComponent = (function () {
     function AppComponent() {
+        this.masterDietLog = [
+            new meal_model_1.Meal("Diner with Deb", "2 hashbrowns, disco-fries, chocolate milkshake", 1000)
+        ];
     }
     AppComponent = __decorate([
         core_1.Component({

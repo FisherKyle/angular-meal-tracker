@@ -12,6 +12,7 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
+var meal_display_component_1 = require('./meal-display-component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -23,6 +24,7 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
+                meal_display_component_1.MealDisplayComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 
