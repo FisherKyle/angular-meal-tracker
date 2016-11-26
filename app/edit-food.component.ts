@@ -19,12 +19,12 @@ import { Food } from './food.model';
     </div>
 
     <button (click)="editMeal(mealTitle.value, mealDetails.value, mealCalories.value)" class="btn" type="submit">update</button>
-    
+
   </div>
   `
 })
 
-export class EditMealComponent {
+export class EditFoodComponent {
 
   @Input() meal: Food;
   @Input() showContent: boolean;

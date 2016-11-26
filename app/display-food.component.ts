@@ -1,16 +1,12 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 import { Food } from './food.model';
 
-//============================//
-//TODO: begin line-15: place forms for gathering name, info, calories//
-//============================//
-
 @Component({
 
   selector: 'display-food',
 
   template: `
-  
+
   <form id="entrySubmit">
   <label for="entry"> Entry: </label>
   <input (change)="formInputEntry($event.target.value)" type="text" class= "form-group" id= "form-input-entry" name="entry" required>
@@ -51,13 +47,11 @@ import { Food } from './food.model';
 export class DisplayFoodComponent {
   @Input() childFoodList: Food[];
   @Output() foodDisplayEmitter = new EventEmitter();
-
+  public showForm: boolean = false;
   public selectedCaloricRange: string = "-";
 
   filterByCaloricRange(clickedCaloricRange) {
-
     this.selectedCaloricRange = clickedCaloricRange;
-
     console.log(clickedCaloricRange);
 
   }
