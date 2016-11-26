@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var food_model_1 = require('./food.model');
+var core_1 = require("@angular/core");
+var food_model_1 = require("./food.model");
 //============================//
 var AppComponent = (function () {
     function AppComponent() {
@@ -17,20 +17,18 @@ var AppComponent = (function () {
             new food_model_1.Food("Diner with Deb", "2 hashbrowns, disco-fries, chocolate milkshake", 1000),
             new food_model_1.Food("monday's netflix snackathon", "pizza rolls, 3 bags of doritos, chocolate milkshake", 2000)
         ];
-        this.selectedCaloricRange = null;
     }
-    AppComponent.prototype.showCaloricRange = function (clickedCaloricRange) {
-        this.selectedCaloricRange = clickedCaloricRange;
-        console.log(clickedCaloricRange);
+    AppComponent.prototype.addMeal = function (newMeal) {
+        this.masterFoodList.push(newMeal);
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n\n    <div class=\"container\">\n      <h2>Meal Tracker</h2>\n\n      <display-food [childFoodList] = \"masterFoodList\" (foodDisplayEmitter) = \"showCaloricRange($event)\">\n      </display-food>\n\n    </div>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'my-app',
+        template: "\n\n    <div class=\"container\">\n\n      <h3>meal tracker 2.0</h3>\n\n      <display-food [childFoodList] = \"masterFoodList\" (foodDisplayEmitter) = \"showCaloricRange($event)\">\n      </display-food>\n\n      <create-meal (createFoodEmitter) = \"addMeal($event)\"></create-meal>\n\n    </div>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

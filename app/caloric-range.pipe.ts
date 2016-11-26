@@ -12,34 +12,33 @@ export class CaloricRangePipe implements PipeTransform {
     var output: Food[] = [];
     var caloricArray = [ "-", "0-100", "101-400", "401-800", "801-1200", ">1200" ];
 
+    if (selectedCaloricRange === "0-100") {
+    }
 
-    console.log(input);
-    console.log(selectedCaloricRange);
-    console.log(caloricArray);
+    if (selectedCaloricRange === "101-400") {
+    }
 
-    if (selectedCaloricRange != "-") {
+    if (selectedCaloricRange === "401-800") {
+    }
 
-      for (var c = 0; c < caloricArray.length; c++) {
+    if (selectedCaloricRange === "801-100") {
+    }
 
-        for (var i = 0; i < input.length; i++) {
 
-          if ( input[i].calories <= 100 ) { i = 0; c = 0; }
-
-          else if ( input[i].calories > 100 && input[i].calories <= 400 ) { i = 1; c = 1; }
-
-          else if ( input[i].calories > 400 && input[i].calories <= 800 ) { i = 2; c = 2; }
-
-          else if ( input[i].calories > 100 && input[i].calories <= 400 ) { i = 1; c = 2; }
-
-          else if ( input[i].calories > 1200 ) { i = 4; c = 4; }
-
-          else { console.log("broken calories"); return input; }
-
-          if ( c === i && caloricArray[c] === selectedCaloricRange ) {
-            output.push(input[i]);
-          }
-        }
-      }
+//   var output = [];
+//   for (var i = 1; i <= goal; i++) {
+//     if (i % 15 === 0) {
+//       output.push("ping-pong");
+//     } else if (i % 3 === 0) {
+//       output.push("ping");
+//     } else if (i % 5 === 0) {
+//       output.push("pong");
+//     } else  {
+//       output.push(i);
+//     }
+//   }
+//   return output;
+// }
 
       return output;
 
