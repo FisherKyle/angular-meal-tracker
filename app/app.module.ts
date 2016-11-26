@@ -4,11 +4,11 @@ import { FormsModule }              from '@angular/forms';
 import { AppComponent }             from './app.component';
 import { DisplayFoodComponent }     from './display-food.component';
 import { CaloricRangePipe }         from './caloric-range.pipe';
-
+import { CreateMealComponent }      from './create-meal.component';
+import { EditFoodComponent }        from './edit-food.component';
 //============================//
 
 @NgModule({
-
   imports:
 
   [
@@ -21,10 +21,15 @@ import { CaloricRangePipe }         from './caloric-range.pipe';
   [
     AppComponent,
     DisplayFoodComponent,
-    CaloricRangePipe
+    CaloricRangePipe,
+    CreateMealComponent,
+    EditFoodComponent
   ],
 
-  bootstrap: [AppComponent]
+  bootstrap:
+  [
+    AppComponent
+  ]
 })
 
 //============================//
