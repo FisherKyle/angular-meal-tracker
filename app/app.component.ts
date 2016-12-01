@@ -15,7 +15,7 @@ import { Food } from './food.model';
       <display-food [childFoodList] = "masterFoodList" (foodDisplayEmitter) = "showCaloricRange($event)">
       </display-food>
 
-      <create-meal (createFoodEmitter) = "addMeal($event)"></create-meal>
+      <create-meal (createFoodEmitter) = "createMeal($event)"></create-meal>
 
     </div>
   `

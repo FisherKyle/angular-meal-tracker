@@ -8,15 +8,17 @@ import { Food } from './food.model';
   template: `
 
   <form id="entrySubmit">
-  <label for="entry"> Entry: </label>
-  <input (change)="formInputEntry($event.target.value)" type="text" class= "form-group" id= "form-input-entry" name="entry" required>
-  <button class= "btn btn-default" type="submit">entry!</button>
-  </form>
 
-  <form id="infoSubmit">
-  <label for="info"> Description: </label>
-  <input (change)="formInputInfo($event.target.value)" type="text" class= "form-group" id= "form-input-info" name="info" required>
-  <button class= "btn btn-default" type="submit">description!</button>
+    <label for="title"> meal title: </label>
+    <input (change)="formInputTitle($event.target.value)" type="text" class= "form-group" id= "form-input-entry" name="title" required>
+
+    <label for="details"> food details: </label>
+    <input (change)="formInputDetails($event.target.value)" type="text" class= "form-group" id= "form-input-info" name="details" required>
+
+    <label for="calories"> calories: </label>
+    <input (change)="formInputCalories($event.target.value)" type="number" class= "form-group" id= "form-input-entry" name="calories" required>
+
+      <button (click)="createMeal(title.value, details.value, calories.value)" class="btn" type="submit">Submit</button>
   </form>
 
 
@@ -47,8 +49,15 @@ import { Food } from './food.model';
 export class DisplayFoodComponent {
   @Input() childFoodList: Food[];
   @Output() foodDisplayEmitter = new EventEmitter();
+  @Output() newMealSender = new EventEmitter();
   public showForm: boolean = false;
   public selectedCaloricRange: string = "-";
+
+  createMeal(title, details, calories) {
+    var output = [];
+    var newMeal = new Food (title, details, calories);
+    this.newMealSender.emit(newMeal);
+  }
 
   filterByCaloricRange(clickedCaloricRange) {
     this.selectedCaloricRange = clickedCaloricRange;

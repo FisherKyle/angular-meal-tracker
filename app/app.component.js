@@ -24,7 +24,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n\n    <div class=\"container\">\n\n      <h3>meal tracker 2.0</h3>\n\n      <display-food [childFoodList] = \"masterFoodList\" (foodDisplayEmitter) = \"showCaloricRange($event)\">\n      </display-food>\n\n      <create-meal (createFoodEmitter) = \"addMeal($event)\"></create-meal>\n\n    </div>\n  "
+            template: "\n\n    <div class=\"container\">\n\n      <h3>meal tracker 2.0</h3>\n\n      <display-food [childFoodList] = \"masterFoodList\" (foodDisplayEmitter) = \"showCaloricRange($event)\">\n      </display-food>\n\n      <create-meal (createFoodEmitter) = \"createMeal($event)\"></create-meal>\n\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
