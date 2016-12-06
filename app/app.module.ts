@@ -2,10 +2,9 @@ import { NgModule }                 from '@angular/core';
 import { BrowserModule }            from '@angular/platform-browser';
 import { FormsModule }              from '@angular/forms';
 import { AppComponent }             from './app.component';
-import { DisplayFoodComponent }     from './display-food.component';
-import { CaloricRangePipe }         from './caloric-range.pipe';
-import { CreateMealComponent }      from './create-meal.component';
-import { EditFoodComponent }        from './edit-food.component';
+import { FoodListComponent }        from './food-list.component';
+import { FoodComponent }            from './food.component';
+
 //============================//
 
 @NgModule({
@@ -17,13 +16,10 @@ import { EditFoodComponent }        from './edit-food.component';
   ],
 
   declarations:
-
   [
     AppComponent,
-    DisplayFoodComponent,
-    CaloricRangePipe,
-    CreateMealComponent,
-    EditFoodComponent
+    FoodComponent,
+    FoodListComponent,
   ],
 
   bootstrap:

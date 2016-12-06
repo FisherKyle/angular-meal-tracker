@@ -17,14 +17,18 @@ var AppComponent = (function () {
             new food_model_1.Food("Diner with Deb", "2 hashbrowns, disco-fries, chocolate milkshake", 1000),
             new food_model_1.Food("monday's netflix snackathon", "pizza rolls, 3 bags of doritos, chocolate milkshake", 2000)
         ];
+        this.selectedFood = null;
     }
+    AppComponent.prototype.displayDetails = function (clickedFood) {
+        this.selectedFood = clickedFood;
+    };
     AppComponent.prototype.addMeal = function (newMeal) {
         this.masterFoodList.push(newMeal);
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n\n    <div class=\"container\">\n\n      <h3>meal tracker 2.0</h3>\n\n      <display-food [childFoodList] = \"masterFoodList\" (foodDisplayEmitter) = \"showCaloricRange($event)\">\n      </display-food>\n\n      <create-meal (createFoodEmitter) = \"createMeal($event)\"></create-meal>\n\n    </div>\n  "
+            template: "\n\n    <div class=\"container\">\n\n      <h3>meal tracker 2.0</h3>\n\n      <h4>Your foods</h4>\n      <food-list\n        [childFoodList]=\"masterFoodList\"\n        (clickSender)=\"displayDetails($event)\"\n      ></food-list>\n\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
