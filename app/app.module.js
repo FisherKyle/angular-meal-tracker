@@ -14,6 +14,8 @@ var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var food_list_component_1 = require('./food-list.component');
 var food_component_1 = require('./food.component');
+var edit_food_component_1 = require('./edit-food.component');
+var add_food_component_1 = require('./add-food.component');
 //============================//
 var AppModule = (function () {
     function AppModule() {
@@ -28,6 +30,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 food_component_1.FoodComponent,
                 food_list_component_1.FoodListComponent,
+                edit_food_component_1.EditFoodComponent,
+                add_food_component_1.AddFoodComponent
             ],
             bootstrap: [
                 app_component_1.AppComponent

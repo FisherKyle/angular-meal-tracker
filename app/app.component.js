@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var food_model_1 = require('./food.model');
+var core_1 = require("@angular/core");
+var food_model_1 = require("./food.model");
 //============================//
 var AppComponent = (function () {
     function AppComponent() {
@@ -22,17 +22,20 @@ var AppComponent = (function () {
     AppComponent.prototype.displayDetails = function (clickedFood) {
         this.selectedFood = clickedFood;
     };
-    AppComponent.prototype.addMeal = function (newMeal) {
-        this.masterFoodList.push(newMeal);
+    AppComponent.prototype.finshedEditing = function () {
+        this.selectedFood = null;
     };
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app',
-            template: "\n\n    <div class=\"container\">\n\n      <h3>meal tracker 2.0</h3>\n\n      <h4>Your foods</h4>\n      <food-list\n        [childFoodList]=\"masterFoodList\"\n        (clickSender)=\"displayDetails($event)\"\n      ></food-list>\n\n    </div>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppComponent);
+    AppComponent.prototype.addFood = function (newFood) {
+        this.masterFoodList.push(newFood);
+    };
     return AppComponent;
 }());
+AppComponent = __decorate([
+    core_1.Component({
+        selector: 'my-app',
+        template: "\n\n    <div class=\"container\">\n\n      <h3>meal tracker 2.0</h3>\n\n      <h4>Your foods</h4>\n\n      <add-food\n        (newFoodSender)=\"addFood($event)\"\n      ></add-food>\n\n      <food-list\n        [childFoodList]=\"masterFoodList\"\n        (clickSender)=\"displayDetails($event)\"\n      ></food-list>\n\n      <edit-food\n      [childSelectedFood]=\"selectedFood\"\n      (doneClickedSender)=\"finshedEditing()\"\n      ></edit-food>\n\n    </div>\n  "
+    }),
+    __metadata("design:paramtypes", [])
+], AppComponent);
 exports.AppComponent = AppComponent;
 //# sourceMappingURL=app.component.js.map

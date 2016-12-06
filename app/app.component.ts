@@ -13,10 +13,20 @@ import { Food } from './food.model';
       <h3>meal tracker 2.0</h3>
 
       <h4>Your foods</h4>
+
+      <add-food
+        (newFoodSender)="addFood($event)"
+      ></add-food>
+
       <food-list
         [childFoodList]="masterFoodList"
         (clickSender)="displayDetails($event)"
       ></food-list>
+
+      <edit-food
+      [childSelectedFood]="selectedFood"
+      (doneClickedSender)="finshedEditing()"
+      ></edit-food>
 
     </div>
   `
@@ -35,7 +45,11 @@ export class AppComponent {
     this.selectedFood = clickedFood;
   }
 
-  addMeal(newMeal) {
-    this.masterFoodList.push(newMeal);
+  finshedEditing() {
+    this.selectedFood = null;
+  }
+
+  addFood(newFood) {
+    this.masterFoodList.push(newFood);
   }
 }
