@@ -6,6 +6,7 @@ import { FoodListComponent }        from './food-list.component';
 import { FoodComponent }            from './food.component';
 import { EditFoodComponent }        from './edit-food.component';
 import { AddFoodComponent }         from './add-food.component';
+import { CaloricRangePipe}          from './caloric-range.pipe';
 
 //============================//
 
@@ -23,7 +24,8 @@ import { AddFoodComponent }         from './add-food.component';
     FoodComponent,
     FoodListComponent,
     EditFoodComponent,
-    AddFoodComponent
+    AddFoodComponent,
+    CaloricRangePipe
   ],
 
   bootstrap:
