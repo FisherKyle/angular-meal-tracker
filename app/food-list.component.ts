@@ -5,9 +5,18 @@ import { Food } from './food.model';
   selector: 'food-list',
   template: `
   <h6>You can customize meals by calorie count!</h6>
-  <div *ngFor="let currentFood of childFoodList">
-    <food-display [food]="currentFood"></food-display>
-    <button class="btn btn-xs" (click)="editButtonClicked(currentFood)">Edit</button>
+  <select (change)="onChange($event.target.value)">
+    <option value ="all">Show All</option>
+    <option value ="low">Show Low Calorie</option>
+    <option value ="high">Show High Calorie</option>
+  </select>
+  <div *ngFor="let currentFood of childFoodList | caloricRange:selectedCaloricRange">
+  <div (click)="editClicked(currentFood)">
+    <h3 class="food">{{ currentFood.name }}</h3>
+    <h4>Info: {{ currentFood.info }}</h4>
+    <h4>Calories: {{ currentFood.calories }}</h4>
+  </div>
+    <button class="btn btn-xs" (click)="editClicked(currentFood)">Edit</button>
     <br>
     <hr>
   </div>
@@ -17,12 +26,12 @@ import { Food } from './food.model';
 export class FoodListComponent {
   @Input() childFoodList: Food[];
   @Output() clickSender = new EventEmitter();
+  public selectedCaloricRange: string = "all";
 
-  public filteredCalories = "all";
-  editButtonClicked(foodToEdit: Food) {
-    this.clickSender.emit(foodToEdit);
+  onChange(optionFromMenu) {
+    this.selectedCaloricRange = optionFromMenu;
   }
-  onCalorieChange(calorieInput) {
-    this.filteredCalories = calorieInput;
+  editClicked(foodToEdit: Food) {
+    this.clickSender.emit(foodToEdit);
   }
 }

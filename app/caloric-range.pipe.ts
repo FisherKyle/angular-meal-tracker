@@ -7,20 +7,20 @@ import { Food } from './food.model';
 })
 
 export class CaloricRangePipe implements PipeTransform {
-  transform(input: Food[], selectedCaloricRange) {
+  transform(input: Food[], desiredCaloricRange) {
 
     var output: Food[] = [];
-    if(selectedCaloricRange === "low") {
+    if(desiredCaloricRange === "low") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].calories < 500) {
+        if (input[i].calories < 600) {
           output.push(input[i]);
         }
       }
       return output;
 
-    } else if (selectedCaloricRange === "high") {
+    } else if (desiredCaloricRange === "high") {
       for (var i = 0; i < input.length; i++) {
-        if (input[i].calories >= 500) {
+        if (input[i].calories >= 600) {
           output.push(input[i]);
         }
       }

@@ -24,7 +24,7 @@ import { Food } from './food.model';
 })
 
 export class AddFoodComponent {
-  @Input() childFoodList: Food[];
+
   @Output() newFoodSender = new EventEmitter();
   addClicked(name: string, info: string, calories: number) {
     var newFood: Food = new Food(name, info, calories);

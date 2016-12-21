@@ -14,19 +14,11 @@ import { Food } from './food.model';
 
       <h4>Your foods</h4>
 
-      <add-food
-        (newFoodSender)="addFood($event)"
-      ></add-food>
+      <add-food (newFoodSender)="addFood($event)"></add-food>
 
-      <food-list
-        [childFoodList]="masterFoodList"
-        (clickSender)="displayDetails($event)"
-      ></food-list>
+      <food-list [childFoodList]="masterFoodList"(clickSender)="displayDetails($event)"></food-list>
 
-      <edit-food
-      [childSelectedFood]="selectedFood"
-      (doneClickedSender)="finshedEditing()"
-      ></edit-food>
+      <edit-food [childSelectedFood]="selectedFood"(doneClickedSender)="finshedEditing()"></edit-food>
 
     </div>
   `
@@ -49,7 +41,7 @@ export class AppComponent {
     this.selectedFood = null;
   }
 
-  addFood(newFood) {
+  addFood(newFood: Food) {
     this.masterFoodList.push(newFood);
   }
 }

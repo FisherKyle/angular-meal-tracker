@@ -13,7 +13,6 @@ var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var app_component_1 = require('./app.component');
 var food_list_component_1 = require('./food-list.component');
-var food_component_1 = require('./food.component');
 var edit_food_component_1 = require('./edit-food.component');
 var add_food_component_1 = require('./add-food.component');
 var caloric_range_pipe_1 = require('./caloric-range.pipe');
@@ -29,7 +28,6 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                food_component_1.FoodComponent,
                 food_list_component_1.FoodListComponent,
                 edit_food_component_1.EditFoodComponent,
                 add_food_component_1.AddFoodComponent,
